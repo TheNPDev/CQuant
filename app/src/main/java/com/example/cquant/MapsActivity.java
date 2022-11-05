@@ -75,6 +75,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
+        Button ar = findViewById(R.id.AR);
+        ar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = getPackageManager().getLaunchIntentForPackage("com.DefaultCompany.UaaLExample");
+                if(intent2 != null){
+                startActivity(intent2);
+                }
+                else
+                    Toast.makeText(MapsActivity.this, "AR module not installed", Toast.LENGTH_LONG).show();
+            }
+        });
+
 
     }
 
